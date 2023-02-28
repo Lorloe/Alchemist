@@ -1,4 +1,4 @@
-# Alchemist
+# NaCl
 
 
 Simple Chemistry App
