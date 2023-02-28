@@ -1,0 +1,19 @@
+
+
+.sidebar-item{
+    padding: 0px 0px 10px 25px;
+    display: flex;
+    height: 50px;
+    
+    .icon{
+        width: 25px;
+        height: 25px;
+        padding-right: 30px;
+        color: #918e95;
+    }
+    .text{
+        font-family: PhilosopherBold;
+        font-size: 1.3rem;
+    }
+
+}
