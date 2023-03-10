@@ -6,14 +6,23 @@
     height: 50px;
     
     .icon{
-        width: 25px;
-        height: 25px;
-        padding-right: 30px;
+        width: 22px;
+        height: 22px;
+        padding-right: 28px;
         color: #918e95;
     }
     .text{
         font-family: PhilosopherBold;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
+}
+@media (max-width: 1300px ) {
+    .text{
+        display: none;
+    }
+    .icon{
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import PeriodicTable from "../../components/PeriodicTable";
-import "./styles.scss";
+import styles from './styles.module.scss';
+import Sidebar from "../../components/Sidebar";
+import classNames from 'classnames/bind';
+let cx = classNames.bind(styles);
 
 const Periodic = () => {
-  const fruit = ["Apple","Orange","Lemon"];
+  
   return (
-    <div className="container-periodic">
-         {fruit.map((item)=>{
-           return <h1>{item}</h1>
-         })}
+    <div className={cx('container')}>
+        <Sidebar/>
+        <PeriodicTable/>
     </div>
   );
 };

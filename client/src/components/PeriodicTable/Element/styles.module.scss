@@ -1,0 +1,37 @@
+.element-box{
+    
+    color: #FFF;
+    user-select: none;
+    cursor: pointer;
+    max-width: 62px;
+    max-height: 62px;
+    justify-content: center;
+    background-color: #66b3b3 ; 
+    border: 1px solid #4c9292;
+    display: flex;
+    flex-direction: column;
+    
+    .mol-section{
+      margin-left: auto;
+    }
+    .label-section{
+      text-align: center;
+      
+    }
+    .detail-section{
+       p{
+          font-size: 0.4rem;
+          text-align: center;
+          
+       }
+    }
+
+}
+@media (max-width:690px) {
+     .mol-section{
+      display: none;
+     }
+     .detail-section{
+      display: none
+     }
+}
