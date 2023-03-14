@@ -1,0 +1,109 @@
+$alkali_metal : #daa245;
+$alkali_earth_metal : #dee955;
+$lathanoid: #ec77a3;
+$actinide : #af78b5;
+$transition_metal : #fd8572;
+$post_transition_metal : #4cddf3;
+$metalloid : #3aefb6;
+$noble_gas: #759fff;
+$halogen:  #7394e2;
+$nonmetal : #32cc9b;
+.element-box{
+    
+    color: #FFF;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    max-width: 62px;
+    max-height: 62px;
+    justify-content: center;
+    background-color: #66b3b3 ; 
+    border: 1px solid #4c9292;
+    display: flex;
+    flex-direction: column;
+    
+    .index-section{
+      margin-left: auto;
+      font-size: 0.8rem;
+    }
+    .label-section{
+      text-align: center;
+      
+    }
+    .detail-section{
+       p{
+          font-size: 0.6rem;
+          text-align: center;
+          
+       }
+    }
+   &:hover{
+     scale: (1.35);
+     z-index: 2;
+   }
+}
+.alkali_metal{
+  background-color: $alkali_metal;
+}
+.alkaline_earth_metal{
+  background-color: $alkali_earth_metal;
+}
+.lanthanide{
+  background-color: $lathanoid;
+}
+.actinide{
+  background-color: $actinide;
+}
+.noble_gas{
+  background-color: $noble_gas;
+}
+.post-transition_metal{
+  background-color: $post_transition_metal;
+}
+.metalloid{
+  background-color: $metalloid;
+}
+.halogen{
+  background-color: $halogen;
+}
+.nonmetal{
+  background-color: $nonmetal;
+}
+@media (max-width:690px) {
+     .mol-section{
+      display: none;
+     }
+     .detail-section{
+      display: none
+     }
+}
+
+.large-element-box{
+
+  color: #FFF;
+    user-select: none;
+    cursor: pointer;
+    max-width: 240px;
+    max-height: 240px;
+    justify-content: center;
+    background-color: #66b3b3 ; 
+    border: 1px solid #4c9292;
+    display: flex;
+    flex-direction: column;
+    
+    .mol-section{
+      margin-left: auto;
+    }
+    .label-section{
+      text-align: center;
+      
+    }
+    .detail-section{
+       p{
+          font-size: 1.2rem;
+          text-align: center;
+          
+       }
+    }
+
+}
