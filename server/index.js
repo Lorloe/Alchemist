@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 const dotenv = require("dotenv");
 const express = require("express");
 const route = require("./routes");
@@ -23,4 +21,3 @@ connectDB();
 route(app);
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
->>>>>>> Stashed changes

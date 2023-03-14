@@ -1,11 +1,4 @@
 import React from "react";
-<<<<<<< Updated upstream
-import "./styles.scss";
-const PeriodicTable = () => {
-  return <div className="periodic-table">
-         <div className="element-wrapper">
-            
-=======
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 import Table from "./Table";
@@ -22,9 +15,8 @@ const PeriodicTable = ({elements,index}) => {
          <div className={cx("container")}>
            {elements && <Table elements={elements} /> }
            {index && <Bubble element={findElementByNumber(elements,index)}/> }   
->>>>>>> Stashed changes
          </div>
-  </div>;
+   )
 };
 
 export default PeriodicTable;

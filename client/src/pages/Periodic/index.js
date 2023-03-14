@@ -1,17 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PeriodicTable from "../../components/PeriodicTable";
-<<<<<<< Updated upstream
-import "./styles.scss";
-
-const Periodic = () => {
-  const fruit = ["Apple","Orange","Lemon"];
-  return (
-    <div className="container-periodic">
-         {fruit.map((item)=>{
-           return <h1>{item}</h1>
-         })}
-=======
 import styles from "./styles.module.scss";
 import Sidebar from "../../components/Sidebar";
 import classNames from "classnames/bind";
@@ -63,7 +52,6 @@ const Periodic = () => {
       <ElementContext.Provider value={{data:Elements,ChangeBubbleIndex,BubbleIndex,ChangeCategory,Category}}>
        <PeriodicTable elements={Elements} index={BubbleIndex}/>
       </ElementContext.Provider>
->>>>>>> Stashed changes
     </div>
   );
 };
