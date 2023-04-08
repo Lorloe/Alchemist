@@ -3,7 +3,6 @@ const router = express.Router();
 require("dotenv").config();
 
 const Element = require('../models/Element');
-const ReactWith = require('../models/ReactWith')
 
 //Get all elements
 
@@ -69,8 +68,7 @@ const CreateElement = async (req, res) => {
                 density, 
                 category, 
                 yearDiscovered, 
-                picture, 
-                reactWith } = req.body;
+                picture } = req.body;
 
         // const reactWithArray = reactWith.map((react) => {
         //     const { symbolReact, result } = react;
@@ -146,7 +144,7 @@ const DeleteElement = async (req,res) => {
     try {
         const { name } = req.body;
         const element = await Element.findOne({ name: name });
-        if(element == null){
+        if(!element){
             return res.status(400).send("Element not found");
         }
         await element.remove();

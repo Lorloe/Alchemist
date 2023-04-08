@@ -10,6 +10,7 @@ const connectDB = async () => {
             useUnifiedTopology: true,
             //useFindAndModify: false
         });
+        //await parseAndLoadPlanetsData();
         
         console.log('MONGODB connected');
     } catch (error) {
@@ -17,5 +18,9 @@ const connectDB = async () => {
         process.exit(1);
     }
 }
+
+setTimeout(function() {
+    mongoose.connect('mongodb://127.0.0.1:27017/NaCl');
+}, 60000);
 
 module.exports = connectDB;

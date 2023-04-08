@@ -1,0 +1,19 @@
+{
+    "name":"NaClO3",
+    "elements":[Na,Cl,O],
+    "category":"Salt",
+}
+
+{
+    "name" : "Hoa hoc co ban",
+    "level":"8",
+    "description" :"Khoa hoc hay qua"
+    "content":[{"name":"bai1","thoiluong":"9phut","type":"lythuyet","content":[{tyoe:"text",noidung:"chat gpt the he 4"},"dong2",{type:"img","img url here"}]
+    },{"type":"bai tap"},{},{}
+]
+}
+{
+    "name" : "Hoa hoc co ban 2",
+    "level":"8",
+    "description" :"Khoa hoc hay qua"
+}
