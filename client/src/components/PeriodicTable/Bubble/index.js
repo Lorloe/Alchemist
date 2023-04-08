@@ -11,8 +11,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 let cx = classNames.bind(styles);
 
-const Bubble = ({ element }) => {
-   const {ChangeBubbleIndex} = useContext(ElementContext);
+const Bubble = ({ element , handleBubble }) => {
+
   if (element) {
     return (
       <div className={cx("container")}>
@@ -36,7 +36,7 @@ const Bubble = ({ element }) => {
                 <TableRow>
                   <TableCell>Thông số chi tiết</TableCell>
                   <TableCell className={cx("toggle")} onClick={()=>{
-                    ChangeBubbleIndex(null)
+                     handleBubble(null);
                   }}>X</TableCell>
                 </TableRow>
               </TableHead>

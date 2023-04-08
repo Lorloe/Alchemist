@@ -12,13 +12,11 @@ let config = {
 const Annotation = () => {
   return (
     <div className={cx("annotation")}>
-    <Element className={cx("large-element")} data={config}>
-      <React.Fragment>
+    <Element className={cx("large-element")} name={config.name} symbol={config.symbol} mass={config.mass} number={config.number}>
         <div className={cx("lbl-atomic-number")}>Atomic number</div>
         <div className={cx("lbl-symbol")}>Symbol</div>
         <div className={cx("lbl-mol")}>Atomic mass</div>
         <div className={cx("lbl-name")}>Name</div>
-      </React.Fragment>
     </Element>
   </div>
   )

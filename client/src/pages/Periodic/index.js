@@ -9,7 +9,7 @@ const Periodic = () => {
   
   return (
     <div className={cx('container')}>
-        <Sidebar/>
+        <Sidebar  lbl={'periodic'}/>
         <PeriodicTable/>
     </div>
   );

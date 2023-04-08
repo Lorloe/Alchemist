@@ -2,9 +2,13 @@
     
     min-height: 100vh;
     max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #FFFF; 
     border-top-right-radius : 20px;
     border-bottom-right-radius: 20px;
+    padding: 10px 0px;
     .logo-sidebar{
         display: flex;
         max-height: 100px;
@@ -21,7 +25,9 @@
         width: 100%;
     }
     .guide-sidebar{
+       
         justify-content: center;
+        padding-top: 50px;
           .book{
             display: block;
             margin-left: auto;

@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: repeat(18,minmax(2rem,62px));
     justify-content: center;
-    >:nth-child(3){
+    >:nth-child(2){
             grid-column: 18;
             
             
@@ -18,26 +18,30 @@
 //     grid-column: 2/13   ;
    
 //    }
-    >:nth-child(57){
+    >:nth-child(56){
     grid-column: 2/4   ;
   
    
     }
-   >:nth-child(74){
+   >:nth-child(73){
     grid-column: 2/4   ;
 }
->:nth-child(90){
+>:nth-child(89){
     grid-column: 4 ;
    
 }
->:nth-child(105){
+>:nth-child(104){
     grid-column: 4 ;
     
 }
 .info{
     grid-row: 1/span 3;
     grid-column: 3/span 10;
-    background-color: red;
+
+}
+
+.sort{
+   
 }
    
 //     display: flex;

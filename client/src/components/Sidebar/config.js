@@ -4,18 +4,30 @@ import { faCodepen } from '@fortawesome/free-brands-svg-icons'
 export const ArraySidebar = [
     {
         "icon":faHome,
-        "text":"Trang chủ"
+        "text":"Trang chủ",
+        "lbl":"home",
+        "nav":"hub"
     },
     {
         "icon":faCodepen,
-        "text":"Bài học"
+        "text":"Bài học",
+        "lbl":"course",
+        "nav":"course"
+       
+
     },
     {
         "icon":faAtom,
-        "text":"Tra cứu"
+        "text":"Bảng tuần hoàn",
+        "lbl":"periodic",
+        "nav":"periodic"
+        
     },
     {
         "icon":faScaleUnbalanced,
-        "text":"Tính toán"
+        "text":"Tính toán",
+        "lbl":"calc",
+        "nav":"calc"
+       
     }
 ]

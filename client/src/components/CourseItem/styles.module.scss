@@ -1,0 +1,40 @@
+
+
+.course-item{
+    display: flex;
+    flex-direction: column;
+    gap : 10px;
+ 
+   .banner{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      height: 160px;
+      width: 280px;
+      display: flex;
+      >img{
+          width: 120px;
+          height: 120px;
+      }
+      
+      
+   }
+   .novice{
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #808dd0 100%);
+   }
+   .intermediate{
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+   }
+   .detail{
+      display: flex;
+      flex-direction: column;
+      >.name{
+           font-size: 1.2rem;
+           font-family: SFMEDIUM;
+      }
+   }
+
+}

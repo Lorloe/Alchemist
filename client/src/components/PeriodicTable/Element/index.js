@@ -2,14 +2,15 @@ import React from "react";
 import styles from './styles.module.scss';
 import classNames from 'classnames/bind';
 let cx = classNames.bind(styles);
-const Element = ({index}) => {
+const Element = ({number,symbol,name,mass,className,children}) => {
   return (
-    <div draggable={true} className={cx("element-box")}>
-      <div className={cx("mol-section")}>{index}</div>
-      <div className={cx("label-section")}>H</div>
+    <div draggable={true} className={cx("element-box",className)}>
+      <div className={cx("mol-section")}>{number && number}</div>
+      <div className={cx("label-section")}>{symbol && symbol}</div>
       <div className={cx("detail-section")}>
-        <p>Hydrogen</p>
-        <p>1.008</p>
+        <p>{name && name}</p>
+        {children && children}
+        <p>{mass && mass}</p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { faHome, faAtom} from '@fortawesome/free-solid-svg-icons'
 import { ArraySidebar } from "./config";
 import { Book } from "../../assets/png";
 let cx = classNames.bind(styles);
-const Sidebar = () => {
+const Sidebar = ({lbl}) => {
   
   return (
     <div className={cx('wrapper-sidebar')}>
@@ -15,7 +15,7 @@ const Sidebar = () => {
         <img src={logoWithText} />
       </div>
       <div className={cx('list-sidebar-item')}>
-       {ArraySidebar.map((item)=><SidebarItem key={item.text} icon={item.icon} text={item.text}/>)}
+       {ArraySidebar.map((item)=><SidebarItem key={item.text} icon={item.icon} text={item.text} isChecked={lbl===item.lbl} nav={item.nav} />)}
       </div>
       <div className={cx('guide-sidebar')}>
            <img src={Book} className={cx('book')}/>

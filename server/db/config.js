@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = "mongodb://localhost:27017/NaCl";
+const url = "mongodb://127.0.0.1:27017/NaCl";
 mongoose.set("strictQuery", true);
 
 const connectDB = async () => {
