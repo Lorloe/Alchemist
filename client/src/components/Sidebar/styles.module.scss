@@ -51,4 +51,25 @@
           }
           
     }
+    .user{
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      width: 90%;
+      .user-wrapper{
+        .info{  
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           .username{
+              font-size: 0.8rem;
+              font-family: PhilosopherBold;
+           }
+           .email{
+            font-size: 0.8rem;
+            font-family: PhilosopherRegular;
+           }
+        }
+      }
+    }
 }

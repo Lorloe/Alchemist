@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.scss';
 import { faUser ,faLock , faAt} from '@fortawesome/free-solid-svg-icons'
 import CustomInput from '../../CustomInput';
@@ -6,14 +6,26 @@ import classNames from 'classnames/bind';
 let cx = classNames.bind(styles);
 
 
-const RightSigninBox = () => {
+const RightSigninBox = ({sendData}) => {
+  const [username,setUsername] = useState();
+  const [password,setPassword] = useState();
+ 
+  const handleUsername = (event) => {
+     setUsername(event.target.value);
+       
+  }
+ const handlePassword = (event) => {
+  setPassword(event.target.value);
+ }
   return (
     <div className={cx('right-card')}>
-            <p>Already have an account ? <i>Sign In</i></p>
-            <CustomInput title="Username" placeholder="myusername " className={cx('input')} icon={faUser}/>
-            <CustomInput title="Password" placeholder="mypassword " className={cx('input')} icon={faLock}/>
-            <CustomInput title="Email" placeholder="myemail@ " className={cx('input')} icon={faAt}/>
-            <button className={cx('btn')}>Register</button>
+            <p>Don't have account ? <i>Signup</i></p>
+            <CustomInput title="Username" placeholder="myusername " className={cx('input')} icon={faUser} onChange={handleUsername}/>
+            <CustomInput title="Password" placeholder="mypassword " className={cx('input')} icon={faLock} onChange={handlePassword} type={'password'}/>
+            <button className={cx('btn')} onClick={()=>{
+                 sendData({username:username,password:password})
+                
+            }}>Sign in</button>
         </div> 
   )
 }

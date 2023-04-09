@@ -14,7 +14,6 @@ const UserSchema = new Schema({
     },
     fullname:{
         type: String,
-        required: true,
         maxLength: 20
     },
     email:{

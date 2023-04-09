@@ -10,7 +10,9 @@ const CustomInput = (props) => {
             {props.title}
         </label>
         <div className={cx('input-wrapper')}>
-        <input className={cx('input')} placeholder={props.placeholder}/>
+        <input className={cx('input')} placeholder={props.placeholder} type={props.type} onChange={(e)=>{
+          props.onChange(e);
+        }}/>
         <FontAwesomeIcon icon={props.icon} />
         </div>
     </div>

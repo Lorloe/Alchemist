@@ -30,7 +30,7 @@ const Switch = (props) => {
         </div>
         <br/>
         <div className={cx("text")} 
-       >Đăng nhập</div>
+       >Đăng Ký</div>
     </div>
     <div className={cx('icon-box','long')} onClick={()=>{
       line_class.bottom=true;
@@ -41,7 +41,7 @@ const Switch = (props) => {
         <FontAwesomeIcon icon={faAddressCard}/>
         </div>
         <br/>
-        <div className={cx("text")}>Đăng ký</div>
+        <div className={cx("text")}>Đăng nhập</div>
     </div>
     <div className={cx(line_class)}></div>
 </div>

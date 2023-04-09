@@ -1,9 +1,12 @@
-import React, { useEffect , useRef } from "react";
+import React, { useEffect , useRef , useContext } from "react";
 import { useNavigate } from "react-router";
 import "./styles.scss";
 import Button from "../../Button";
 import { glasses } from "../../../assets/svg";
+import { AuthContext } from "../../../storage/auth-context";
+
 const Intro = () => {
+    const auth = useContext(AuthContext);
     const Navigate = useNavigate();
     const firstLineRef = useRef();
     const secondLineRef = useRef();
@@ -11,7 +14,7 @@ const Intro = () => {
     const firstLine = ["Học hóa không khó ","Reactions are important","I lost an electron"];
     const secondLine = ["như bạn tưởng","Don’t overreact ","So I am very positive."];
     const MovingText = () =>{
-            setInterval(()=>{
+       const interval = setInterval(()=>{
                    if(i<2){
                       i++;
                       firstLineRef.current.innerHTML = firstLine[i];
@@ -22,9 +25,13 @@ const Intro = () => {
                      secondLineRef.current.innerHTML = secondLine[i];
                    }
             },3000)
+            return interval;
     }
     useEffect(()=>{
-        MovingText();
+       const interval = MovingText();
+        return ()=>{
+             clearInterval(interval);
+        }
     })
   return (
     <div className="intro-wrapper">
@@ -32,7 +39,7 @@ const Intro = () => {
         <p ref={firstLineRef}>Học hóa không khó</p>
         <p ref={secondLineRef}>như bạn tưởng ?</p>
         <Button className="btn-config" onClick={()=>{
-          Navigate("/hub")
+          {auth.isLogged ? Navigate("/hub") : Navigate("/auth/login")}
         }}>Try</Button>
       </div>
       <div className="intro-img">

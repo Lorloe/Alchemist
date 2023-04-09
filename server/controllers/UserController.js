@@ -1,6 +1,4 @@
 const express = require('express');
-const router = express.Router();
-const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const {DateOfNowString,DateOfNow} = require("../utils/dateOfNow");
@@ -83,6 +81,13 @@ const Register = async (req,res) => {
     try{
         const salt = bcrypt.genSaltSync(10);
         const {username,fullname,email,password} = req.body;
+
+        const checkuser = await User.findOne({username});
+        if(checkuser)
+        return res.status(400).json({ success: false, message: "Username is already Exist" });
+        const checkmail = await User.findOne({email});
+        if(checkmail)
+        return res.status(400).json({ success: false, message: "Email is already Exist" });
         const hash = bcrypt.hashSync(password,salt);
         const user = new User({
             username,

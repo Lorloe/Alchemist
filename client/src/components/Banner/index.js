@@ -4,20 +4,20 @@ import classNames from 'classnames/bind';
 import { BannerIcon } from '../../assets/png';
 let cx = classNames.bind(styles);
 
-const Banner = () => {
+const Banner = ({img,color,title,description}) => {
   return (
-    <div className={cx('container')}>
+    <div className={cx('container',color)}>
        <div className={cx('wrapper')}>
        <div className={cx('description')}>
          <label className={cx('title')}>
-            Chemistry Lessons
+            {title}
         </label>
         <p className={cx('detail')}>
-            Tham gia các bài học được thiết kế đơn giản nhưng hiệu quả
+           {description}
         </p>
        </div>
         <div className={cx('icon')}>
-            <img src={BannerIcon} alt={'BannerIcon'}/>
+            <img src={img} alt={'BannerIcon'}/>
         </div>
        </div>
     </div>
