@@ -2,15 +2,28 @@ name: CI
 
 on:
   push:
+    paths: 
+      - '**.js'
+      - '!docs/**'
+      - '**.yml'
+  pull-request:
+    types:
+      - opened
+      - closed
+      - synchronize
+      - labeled
+      - unlabeled
     branches: [ 0.5/CCVMTPTPM ]
-
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
     - name: Run a one-line script
-      run: echo Hello World!!!
+      run: |
+        echo Hello World!!!
+        echo "TODAY=$(date +'%y-%m-%d')" >> GITHUB_ENV
     - name: Run a multi-line script
       run: |
         echo Add another action to build
@@ -25,6 +38,7 @@ jobs:
       working-directory: ./client
     - name: Build and test
       run: |
+        npm start
         npm run build
         npm test
       working-directory: ./client
