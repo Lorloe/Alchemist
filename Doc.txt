@@ -1,0 +1,12 @@
+File Test nằm trong server
+Link drive: https://drive.google.com/drive/folders/1Fm_SERwRO_6pQB4yQZ6O8vQZaBl581BD?usp=sharing
+Phân chia công việc viết US:
+Lê Viết Khả Thi – Đăng nhập, Tìm kiếm nguyên tố Combination
+Vũ Công Thành – Đăng ký, Đăng ký khóa học
+Phân chia công việc viết unit test
+Lê Viết Khả Thi:
++should register a new user
++should log in an existing user
+Vũ Công Thành
++should not log in a non-existing user
++should not log in a user with wrong password
