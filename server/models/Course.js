@@ -22,6 +22,9 @@ const CourseSchema = new Schema({
         unique: true,
         require: true,
     },
+    level:{
+        type: String,
+    },
     name:{
         type: String,
         require: true,

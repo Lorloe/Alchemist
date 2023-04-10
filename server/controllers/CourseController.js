@@ -39,9 +39,10 @@ const ListCourse = async (req,res)  => {
 //create a new course
 const CreateCourse = async (req,res) => {
     try{
-        const{name, image, price, description, expectation, lesson} = req.body;
+        const{name, level, image, price, description, expectation, lesson} = req.body;
         const course = new Course({
             name, 
+            level,
             image, 
             price, 
             description, 
