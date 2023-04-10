@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const CombinationSchema = new Schema({
     name:{
         type: String,
-        require: true
+        require: true,
+        unique: true
     },
     elements:{
         type: Array,

@@ -1,4 +1,6 @@
 const express = require('express');
+const router = express.Router();
+const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const {DateOfNowString,DateOfNow} = require("../utils/dateOfNow");
@@ -78,16 +80,19 @@ const GetAllUser = async (req,res) => {
 // };
 
 const Register = async (req,res) => {
+    const {username,fullname,email,password} = req.body;
+    if(!username || !password || !email )
+        return res.status(400).json({success: false, message: "Missing Username and/or Password"});
     try{
+        //kiem tra user co ton tai khong
+        const checkuser = await User.findOne({ username });
+            if(checkuser)
+                return res.status(400).json({success: false, message: "Username is already exist"});
+        //kiem tra email co ton tai khong
+        const checkemail = await User.findOne({ email });
+            if(checkemail)
+                return res.status(400).json({success: false, message: "Email is already exist"});
         const salt = bcrypt.genSaltSync(10);
-        const {username,fullname,email,password} = req.body;
-
-        const checkuser = await User.findOne({username});
-        if(checkuser)
-        return res.status(400).json({ success: false, message: "Username is already Exist" });
-        const checkmail = await User.findOne({email});
-        if(checkmail)
-        return res.status(400).json({ success: false, message: "Email is already Exist" });
         const hash = bcrypt.hashSync(password,salt);
         const user = new User({
             username,
@@ -151,7 +156,8 @@ const Login = async (req,res) => {
         return res.cookie("access_ticket",token,{httpOnly:true}).status(200).send({...rest});
     } catch(err) {
         console.log(err);
-        return res.status(400).json({ success: false, message: "Internal server error" });
+        res.status(400);
+        res.send({ success: false, message: "Internal server error" });
     }
 };
 
