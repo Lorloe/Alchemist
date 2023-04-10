@@ -3,22 +3,19 @@ const bcrypt = require('bcrypt');
 require("dotenv").config();
 const User = require('../models/User');
 
-
-
 // api/auth/register
 // register user
-
 
 const Register = async (req,res) => {
     try{
         const salt = bcrypt.genSaltSync(10);
         const {username,email,password} = req.body;
         const checkuser = await User.findOne({username});
-        if(checkuser)
-        return res.status(400).json({ success: false, message: "Username is already Exist" });
+            if(checkuser)
+                return res.status(400).json({ success: false, message: "Username is already Exist" });
         const checkmail = await User.findOne({email});
-        if(checkmail)
-        return res.status(400).json({ success: false, message: "Email is already Exist" });
+            if(checkmail)
+                return res.status(400).json({ success: false, message: "Email is already Exist" });
         const hash = bcrypt.hashSync(password,salt);
         const user = new User({
             username,
