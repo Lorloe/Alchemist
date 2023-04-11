@@ -6,6 +6,7 @@ import HubContent from '../../components/HubContent';
 let cx = classNames.bind(styles);
 
 const Hub = () => {
+  
   return (
     <div className={cx('hub-container')}>
        <Sidebar  lbl={'home'}/>   

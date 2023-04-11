@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const CombinationSchema = new Schema({
     name:{
         type: String,
@@ -12,6 +13,12 @@ const CombinationSchema = new Schema({
     category:{
         type: String,
         require: true
+    },
+    img: {
+        type: String,
+    },
+    desc:{
+        type: String,
     }
     
 });

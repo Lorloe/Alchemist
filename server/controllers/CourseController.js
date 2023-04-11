@@ -170,5 +170,20 @@ const DeleteLesson = async (req, res) => {
         return res.status(400).json({ message: 'Error' })
     }
 };
+const GetLessonSpecific = async (req,res) => {
+
+    try {
+        const {id,index} = req.params;
+        const course = await Course.findById(id);
+        if(!course){
+            return res.status(404).json({ message: 'Course not found' });
+        }
+        const lesson = course.lesson;
+        return res.status(200).json({ lesson: lesson[index]});
+    } catch (err) {
+        console.error(err);
+        return res.status(400).json({ message: 'Error' });
+    }
+}
  
-module.exports = {GetAllCourse, ListCourse, CreateCourse, UpdateCourse, DeleteCourse, CreateLesson, GetAllLesson, UpdateLesson, DeleteLesson};
+module.exports = {GetAllCourse, ListCourse, CreateCourse, UpdateCourse, DeleteCourse, CreateLesson, GetAllLesson, UpdateLesson, DeleteLesson , GetLessonSpecific};

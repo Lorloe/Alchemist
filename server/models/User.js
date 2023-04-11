@@ -12,9 +12,12 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    fullname:{
+    nickname:{
         type: String,
         maxLength: 20
+    },
+    birthday:{
+        type: Date,
     },
     email:{
         type: String,

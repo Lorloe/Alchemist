@@ -9,14 +9,6 @@ export const ArraySidebar = [
         "nav":"hub"
     },
     {
-        "icon":faCodepen,
-        "text":"Bài học",
-        "lbl":"course",
-        "nav":"course"
-       
-
-    },
-    {
         "icon":faAtom,
         "text":"Bảng tuần hoàn",
         "lbl":"periodic",

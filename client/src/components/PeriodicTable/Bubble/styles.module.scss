@@ -61,25 +61,15 @@
             // border-radius: 50%;
             // min-width: 50%;
             // aspect-ratio: 1/1;
-            border: 2px #e91717 solid;
-            // -webkit-animation: spin-right 20s linear infinite;
-            // animation: spin-right 20s linear infinite;
-          
-            .inner-orbit-cirlces {
-              height: 5%;
-              width: 5%;
-              border-radius: 100%;
-              background-color: #ea1c1c;
-            
-            }
+            border: 2px #169fd1 solid;
+            -webkit-animation: spin-right 20s linear infinite;
+            animation: spin-right 20s linear infinite;
            
            
           } 
           .middle-orbit{
+            @include on-circle($item-count: 5, $circle-size: 240px, $item-size: 10px); 
             position: absolute;
-            border-radius: 50%;
-            min-width: 60%;
-            aspect-ratio: 1/1;
             border: 2px #4A437F dashed;
             -webkit-animation: spin-right 20s linear infinite;
             animation: spin-right 20s linear infinite;
@@ -103,7 +93,11 @@
           user-select: none;
         }
       }
-    
+    .point{
+ 
+       border-radius: 50%;
+       background-color: #f5f3f3;
+    }
      
 }
 

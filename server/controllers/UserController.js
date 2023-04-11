@@ -14,8 +14,8 @@ const GetUser = async (req,res) => {
         if(!user){
             return res.status(404).send("cannot find user");
         }
-        const {username, email, fullname} = user;
-        return res.status(200).send({username, email, fullname});
+        const {username, email, fullname , createdAt , birthday , nickname} = user;
+        return res.status(200).send({username, email, fullname , createdAt , birthday , nickname });
     }
     catch(err){
         console.log(err);
@@ -159,17 +159,16 @@ const Login = async (req,res) => {
 
 const UpdateUserByUser = async(req,res) => {
     try {
-        const {_id} = req.user;
-        const{...rest} = req.body;
-        const user = await User.find({_id:_id});
+        const{birthday,nickname,email,number} = req.body;
+        const user = await User.findOne({_id:req.user.id});
         if(!user){
             return res.status(404).send("Not found");
         }
-        await User.updateOne({_id:_id},{...rest, updateAt:DateOfNow()});
-        return res.status(200).send("Success");
+        await User.updateOne({_id:req.user.id},{birthday,nickname,email,number,updateAt:DateOfNow()});
+        return res.status(200).json({"status":"success"});
     } catch(err) {
         console.log(err);
-        return res.status(400).send("Error");
+        return res.status(400).json({"message":err,"status":"fail"});
     }
 };
 

@@ -9,7 +9,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import UserInfo from '../UserInfo';
 let cx = classNames.bind(styles);
 
-const UserContent = () => {
+const UserContent = ({user,SendData}) => {
   return (
     <div className={cx('container')}>
        <Paper className={cx('user-wrapper')}>
@@ -17,13 +17,13 @@ const UserContent = () => {
             <Avatar sx={{ bgcolor: blue[500] }} className={cx('avatar')} >N</Avatar>
             </div>
             <div className={cx('detail')}>
-            <label>Thanhx001</label>
+            <label>{user.username && user.username  }</label>
              <div className={cx('user-info')}>
                
                 <DateRangeIcon className={cx('icon')}/>
-               <p>Joined 20-3-2023</p>
+               <p>Joined {user.createdAt && user.createdAt.slice(0,10)}</p>
                <SendIcon className={cx('icon')}/>
-               <p>thanhx001@gmail.com</p>
+               <p>{user.email && user.email}</p>
                <SchoolIcon className={cx('icon')}/>
                <p>Intermediate</p>
              </div>
@@ -34,7 +34,7 @@ const UserContent = () => {
 
             </div>
        </Paper>
-       <UserInfo/>
+       <UserInfo user={user} SendData={SendData} />
     </div>
   )
 }

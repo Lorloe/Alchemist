@@ -47,6 +47,9 @@ const CourseSchema = new Schema({
     expectation: {
         type: String
     },
+    level :{
+        type: String
+    },  
     lesson: [ListLessonContent],
 });
 

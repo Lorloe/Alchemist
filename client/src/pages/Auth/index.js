@@ -20,7 +20,7 @@ const Authentication = () => {
   const param = useParams();
   const Navigate = useNavigate();
   const [authState, setAuthState] = useState(param.switch);
-  const user = useContext(AuthContext);
+  const {setUser,setLogged} = useContext(AuthContext);
   const Change = () => {
     setAuthState((prev) => {
       if (prev === "login") { 
@@ -33,6 +33,8 @@ const Authentication = () => {
   const sendData = async (data) => {
      try{
       const user = await axios.post('/auth/login',data,config);
+      setUser(user['data'])
+      setLogged(true);
       Navigate('/hub');
      
      }catch(err){

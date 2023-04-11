@@ -12,18 +12,44 @@ import Paper from "@mui/material/Paper";
 let cx = classNames.bind(styles);
 
 const Bubble = ({ element , handleBubble }) => {
-
+  let arr1 = [];
+  for(let i = 0 ; i < getElementNumber(10); i++){
+     arr1.push("");
+  }
+  let arr2 = [];
+  for(let i = 0 ; i < getElementNumber(10); i++){
+    arr2.push("");
+ }
+ let arr3 = [];
+ for(let i = 0 ; i < getElementNumber(10); i++){
+   arr2.push("");
+}
   if (element) {
     return (
       <div className={cx("container")}>
         <div className={cx("content")}>
           <div className={cx("orbit-container")}>
-            <div className={cx("inner-orbit")}></div>
+            <div className={cx("inner-orbit")}>
+              {
+                arr1.map((item)=>{
+                   return <div className={cx('point')}></div>
+                })
+              }
+              
+            </div>
             <div className={cx("middle-orbit")}>
-              <div className={cx("middle-orbit-cirlces")}></div>
+            {
+                arr2.map((item)=>{
+                   return <div className={cx('point')}></div>
+                })
+              }
             </div>
             <div className={cx("outer-orbit")}>
-              <div className={cx("outer-orbit-cirlces")}></div>
+            {
+                arr2.map((item)=>{
+                   return <div className={cx('point')}></div>
+                })
+              }
             </div>
           </div>
           <TableContainer component={Paper} className={cx("table")}>
@@ -179,5 +205,7 @@ const Bubble = ({ element , handleBubble }) => {
     );
   }
 };
-
+function getElementNumber(max) {
+  return Math.floor(Math.random() * max);
+}
 export default Bubble;

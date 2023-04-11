@@ -3,7 +3,6 @@
     "elements":[Na,Cl,O],
     "category":"Salt",
 }
-
 {
     "name" : "Hoa hoc co ban",
     "level":"8",

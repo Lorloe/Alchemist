@@ -11,6 +11,8 @@ import { AuthContext } from "../../storage/auth-context";
 let cx = classNames.bind(styles);
 const Sidebar = ({lbl}) => {
    const data = useContext(AuthContext);
+   const {isLogged,setLogged,user,setUser} = data;
+   
    const Navigate = useNavigate();
   return (
     <div className={cx('wrapper-sidebar')}>
@@ -30,10 +32,12 @@ const Sidebar = ({lbl}) => {
       <div className={cx('user')}>
           <div className={cx('user-wrapper')}>
              <div className={cx('user')}>
-             <Avatar>N</Avatar>
+             <Avatar onClick={()=>{
+              Navigate('/user')
+             }}>{isLogged ? user.username[0].toUpperCase() : "N"}</Avatar>
              <div className={cx('info')}>
-                {  <label className={cx('username')}>Thanhx001</label> }
-                 <label className={cx('email')}>Thanhx001@gmail.com</label>
+                {isLogged  &&  <label className={cx('username')}>{user.email }</label> }
+               {isLogged  && <label className={cx('email')}>{user.username}</label>  }
              </div>
 
              </div>

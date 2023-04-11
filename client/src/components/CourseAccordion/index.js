@@ -6,27 +6,31 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useNavigate } from 'react-router';
 import { Button } from '@mui/material';
 let cx = classNames.bind(styles);
-const CourseAccordion = ({handleChange,expanded}) => {
+const CourseAccordion = ({handleChange,expanded,index,name,lessonID}) => {
+   const Navigate = useNavigate();
   return (
     <div className={cx('container')}>
-    <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+    <Accordion expanded={expanded === index} onChange={handleChange(index)}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon />}
       aria-controls="panel1bh-content"
       id="panel1bh-header"
     >
       <Typography sx={{ width: '33%', flexShrink: 0 }}>
-        Lesson 1
+        Lesson {index+1}
       </Typography>
       <Typography sx={{ color: 'text.secondary' }}>0%</Typography>
     </AccordionSummary>
     <AccordionDetails className={cx('detail')}>
       <Typography>
-        Tổng quan về hóa học
+        {name}
       </Typography>
-       <Button>GO</Button>
+       <Button onClick={()=>{
+         Navigate('/lesson'+"/"+lessonID+"/"+index);
+       }}>GO</Button>
     </AccordionDetails>
   </Accordion>
   </div>

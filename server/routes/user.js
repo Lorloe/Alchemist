@@ -6,8 +6,7 @@ const {GetUser, GetAllUser, UpdateUserByUser} = require('../controllers/UserCont
 
 router.get("/get-user", verifyToken, GetUser);
 router.get("/get-all-user",GetAllUser);
-router.post("/update-user-user", UpdateUserByUser);
-
+router.post("/update-user-user",verifyToken, UpdateUserByUser);
 router.get("/check-admin",verifyAdmin,(req,res)=>{
     res.send(req.user);
 })

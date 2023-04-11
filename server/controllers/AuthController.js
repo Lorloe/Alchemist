@@ -41,13 +41,13 @@ const Login = async (req,res) => {
     try{
         const user = await User.findOne({username:req.body.username});
         if(!user) { 
-            return res.json({error:"User not found",status:"404"}) ;
+            return res.status(404).json({error:"User not found",status:"404"}) ;
         }
         const comparePassword = await bcrypt.compare(req.body.password,user.password)
         if(!comparePassword) {
-            return res.json({error:"Wrong password",status:"400"});
+            return res.status(400).json({error:"Wrong password",status:"400"});
         }
-        const {_id, password, username, isAdmin,...rest} = user._doc; 
+        const {_id, password, isAdmin,...rest} = user._doc; 
         const token = jwt.sign({id:_id,isAdmin}, process.env.SECRET_KEY);
         return res.cookie("access_ticket",token,{httpOnly:true}).status(200).send({...rest});
     } catch(err) {
